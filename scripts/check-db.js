@@ -97,9 +97,10 @@ async function applyMigration() {
       err = true;
     } finally {
       await prisma.$disconnect();
-      if (err) {
-        process.exit(1);
-      }
+    }
+  
+    if (err) {
+      process.exit(1);
     }
   }
 })();
